@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
   <title>Bertram Yang — Digital Card</title>
 
   <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
@@ -15,17 +18,14 @@
       --text: #e2e8f0;
       --muted: #94a3b8;
       --brand: #3b82f6;
+      --brand-hover: #2563eb;
       --radius: 14px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       display: flex;
@@ -54,10 +54,7 @@
       border: 3px solid var(--brand);
     }
 
-    h1 {
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
+    h1 { font-size: 1.4rem; margin-bottom: 0.5rem; }
 
     p {
       font-size: 0.95rem;
@@ -76,17 +73,15 @@
       display: block;
       text-decoration: none;
       background: var(--brand);
-      color: white;
+      color: #fff;
       padding: 0.75rem 1rem;
       border-radius: var(--radius);
       font-weight: 600;
-      transition: background 0.2s;
       font-size: 0.95rem;
+      transition: background 0.2s ease;
     }
 
-    .btn:hover {
-      background: #2563eb;
-    }
+    .btn:hover, .btn:focus-visible { background: var(--brand-hover); }
 
     .footer {
       margin-top: 2rem;
@@ -94,44 +89,34 @@
       color: var(--muted);
     }
 
-    .footer a {
-      color: var(--brand);
-      text-decoration: none;
+    .footer a { color: var(--brand); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+
+    /* Tiny phones */
+    @media (max-width: 360px) {
+      h1 { font-size: 1.2rem; }
+      p { font-size: 0.85rem; }
+      .btn { font-size: 0.9rem; padding: 0.65rem; }
     }
 
-    .footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media screen and (max-width: 360px) {
-      h1 {
-        font-size: 1.2rem;
-      }
-
-      .btn {
-        font-size: 0.9rem;
-        padding: 0.65rem;
-      }
-
-      p {
-        font-size: 0.85rem;
-      }
-    }
-
-    @media screen and (min-width: 768px) {
-      .card {
-        padding: 2.5rem;
-      }
-
-      h1 {
-        font-size: 1.6rem;
-      }
+    /* Tablets+ */
+    @media (min-width: 768px) {
+      .card { padding: 2.5rem; }
+      h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <img class="avatar" src="https://drive.google.com/uc?export=view&id=16GjbR7JKxYbnayburQGLdR5TZxWDfjKI" alt="BertStudioShot" />
+    <!-- New photo (Drive embed) -->
+    <img
+      class="avatar"
+      src="https://drive.google.com/uc?export=view&id=1RSPMC-TXNDoeprCNyeKGaI5WS6VedyGu"
+      alt="Bertram Yang portrait"
+      loading="lazy"
+      onerror="this.src='https://via.placeholder.com/220?text=Bertram';"
+    />
+
     <h1>Hi, I'm Bertram 👋</h1>
     <p>
       I am a multi-hyphenate and always curious creator.<br />
@@ -139,12 +124,12 @@
     </p>
 
     <div class="button-group">
-      <a class="btn" href="https://www.youtube.com/@GrowingDot" target="_blank">📺 YouTube</a>
-      <a class="btn" href="https://www.instagram.com/berteatsworld/" target="_blank">🍜 IG: Food & Lifestyle</a>
-      <a class="btn" href="https://www.instagram.com/growing.dot/" target="_blank">📖 IG: Storytelling</a>
-      <a class="btn" href="https://www.instagram.com/iambertbrain/" target="_blank">🚀 IG: Career, Growth & AI Literacy</a>
+      <a class="btn" href="https://www.youtube.com/@GrowingDot" target="_blank" rel="noopener">📺 YouTube</a>
+      <a class="btn" href="https://www.instagram.com/berteatsworld/" target="_blank" rel="noopener">🍜 IG: Food & Lifestyle</a>
+      <a class="btn" href="https://www.instagram.com/growing.dot/" target="_blank" rel="noopener">📖 IG: Storytelling</a>
+      <a class="btn" href="https://www.instagram.com/iambertbrain/" target="_blank" rel="noopener">🚀 IG: Career, Growth & AI Literacy</a>
       <a class="btn" href="mailto:bertram.yang@gmail.com">📧 Email Me</a>
-      <a class="btn" href="https://www.linkedin.com/in/bertramyang/" target="_blank">💼 LinkedIn</a>
+      <a class="btn" href="https://www.linkedin.com/in/bertramyang/" target="_blank" rel="noopener">💼 LinkedIn</a>
     </div>
 
     <div class="footer">
