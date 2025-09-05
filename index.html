@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bertram Yang — Digital Card</title>
+
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --brand: #3b82f6;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border: 3px solid var(--brand);
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: block;
+      text-decoration: none;
+      background: var(--brand);
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius);
+      font-weight: 600;
+      transition: background 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .btn:hover {
+      background: #2563eb;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 360px) {
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 0.65rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      .card {
+        padding: 2.5rem;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="avatar" src="https://drive.google.com/uc?export=view&id=16GjbR7JKxYbnayburQGLdR5TZxWDfjKI" alt="Bertram Yang Photo" />
+    <h1>Hi, I'm Bertram 👋</h1>
+    <p>
+      I am a multi-hyphenate and always curious creator.<br />
+      Right now, these are what I am building:
+    </p>
+
+    <div class="button-group">
+      <a class="btn" href="https://www.youtube.com/@GrowingDot" target="_blank">📺 YouTube</a>
+      <a class="btn" href="https://www.instagram.com/berteatsworld/" target="_blank">🍜 IG: Food & Lifestyle</a>
+      <a class="btn" href="https://www.instagram.com/growing.dot/" target="_blank">📖 IG: Storytelling</a>
+      <a class="btn" href="https://www.instagram.com/iambertbrain/" target="_blank">🚀 IG: Career, Growth & AI Literacy</a>
+      <a class="btn" href="mailto:bertram.yang@gmail.com">📧 Email Me</a>
+      <a class="btn" href="https://www.linkedin.com/in/bertramyang/" target="_blank">💼 LinkedIn</a>
+    </div>
+
+    <div class="footer">
+      Built by <strong>@bertbrain</strong> • Hosted on GitHub Pages
+    </div>
+  </div>
+</body>
+</html>
