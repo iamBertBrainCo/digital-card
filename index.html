@@ -30,14 +30,16 @@
       background:var(--card); border-radius:var(--radius); padding:2rem 1.5rem;
       max-width:420px; width:100%; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,.3);
     }
+
     /* Avatar with adjustable crop */
     .avatar{
       width:110px; height:110px; border-radius:50%;
       object-fit:cover;
-      /* Tweak to adjust headroom: second value lower = more top/hair visible */
-      object-position: 50% 35%;
+      /* Base was 50% 35%; nudged +5px downwards on Y */
+      object-position: 50% calc(35% + 5px);
       margin-bottom:1rem; border:3px solid var(--brand);
     }
+
     h1{font-size:1.4rem; margin-bottom:.5rem}
     p{font-size:.95rem; color:var(--muted); margin-bottom:1.5rem; line-height:1.5}
     .button-group{display:flex; flex-direction:column; gap:.75rem}
@@ -56,10 +58,10 @@
 </head>
 <body>
   <div class="card">
-    <!-- Update the path if your filename/folder differs -->
+    <!-- Bump ?v=4 if cache sticks -->
     <img
       class="avatar"
-      src="./assets/bertram.jpg?v=3"
+      src="./assets/bertram.jpg?v=4"
       alt="Bertram Yang portrait"
       width="220" height="220"
       loading="lazy"
