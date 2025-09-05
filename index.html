@@ -6,110 +6,57 @@
   <meta name="theme-color" content="#0f172a" />
   <title>Bertram Yang — Digital Card</title>
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --brand: #3b82f6;
-      --brand-hover: #2563eb;
-      --radius: 14px;
+      --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8;
+      --brand:#3b82f6; --brand-hover:#2563eb; --radius:14px;
     }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 1rem;
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--bg); color:var(--text);
+      min-height:100vh; display:flex; align-items:center; justify-content:center; padding:1rem;
     }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius);
-      padding: 2rem 1.5rem;
-      max-width: 420px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    .card{
+      background:var(--card); border-radius:var(--radius); padding:2rem 1.5rem;
+      max-width:420px; width:100%; text-align:center; box-shadow:0 10px 25px rgba(0,0,0,.3);
     }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      border: 3px solid var(--brand);
+    .avatar{
+      width:110px; height:110px; border-radius:50%; object-fit:cover;
+      margin-bottom:1rem; border:3px solid var(--brand);
     }
-
-    h1 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-
-    p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.5;
+    h1{font-size:1.4rem; margin-bottom:.5rem}
+    p{font-size:.95rem; color:var(--muted); margin-bottom:1.5rem; line-height:1.5}
+    .button-group{display:flex; flex-direction:column; gap:.75rem}
+    .btn{
+      display:block; text-decoration:none; background:var(--brand); color:#fff;
+      padding:.75rem 1rem; border-radius:var(--radius); font-weight:600; font-size:.95rem;
+      transition:background .2s ease;
     }
-
-    .button-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      display: block;
-      text-decoration: none;
-      background: var(--brand);
-      color: #fff;
-      padding: 0.75rem 1rem;
-      border-radius: var(--radius);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.2s ease;
-    }
-
-    .btn:hover, .btn:focus-visible { background: var(--brand-hover); }
-
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    .footer a { color: var(--brand); text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
-
-    /* Tiny phones */
-    @media (max-width: 360px) {
-      h1 { font-size: 1.2rem; }
-      p { font-size: 0.85rem; }
-      .btn { font-size: 0.9rem; padding: 0.65rem; }
-    }
-
-    /* Tablets+ */
-    @media (min-width: 768px) {
-      .card { padding: 2.5rem; }
-      h1 { font-size: 1.6rem; }
-    }
+    .btn:hover,.btn:focus-visible{background:var(--brand-hover)}
+    .footer{margin-top:2rem; font-size:.8rem; color:var(--muted)}
+    .footer a{color:var(--brand); text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+    @media (max-width:360px){h1{font-size:1.2rem} p{font-size:.85rem} .btn{font-size:.9rem; padding:.65rem}}
+    @media (min-width:768px){.card{padding:2.5rem} h1{font-size:1.6rem}}
   </style>
 </head>
 <body>
   <div class="card">
-    <!-- New photo (Drive embed) -->
-<img class="avatar" src="./BertStudioShot.jpg" alt="Bertram Yang portrait" width="220" height="220" loading="lazy">
+    <!-- If your file path/name differs, change src below. ?v=1 busts cache on first deploy -->
+    <img
+      class="avatar"
+      src="./assets/bertram.jpg?v=1"
+      alt="Bertram Yang portrait"
+      width="220" height="220"
+      loading="lazy"
+      onerror="this.src='https://via.placeholder.com/220?text=Bertram';"
+    />
 
     <h1>Hi, I'm Bertram 👋</h1>
     <p>
